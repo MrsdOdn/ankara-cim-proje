@@ -1,11 +1,30 @@
+import React from 'react';
+import Navbar from './components/Navbar';
+import Hero from './sections/Hero';
+import Services from './sections/Services';
+import Portfolio from './sections/Portfolio';
+import MapSection from './sections/MapSection';
+import Footer from './components/Footer';
+import Features from './sections/Features';
+
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <h1 className="text-4xl font-bold text-green-600">
-        Ankara Çim Biçme Yakında Burada!
-      </h1>
+    <div className="min-h-screen bg-white">
+      <Navbar />
+      
+      {/* Sayfa İçeriği Başlangıcı */}
+      <main>
+        <Hero />
+        <Services />
+        <Features />
+        <Portfolio />
+        <MapSection />
+        
+      </main>
+      {/* Sayfa İçeriği Sonu */}
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
