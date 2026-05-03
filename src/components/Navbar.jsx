@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { Menu, X, Phone } from 'lucide-react'; // İkonlar için
-import logo from '../assets/logo.png'; // Logonu buraya çağırdık
+import { Menu, X, Phone } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Menü linkine tıklandığında menüyü kapatmak için
+  const closeMenu = () => setIsOpen(false);
 
   return (
     <nav className="bg-white/90 backdrop-blur-md shadow-sm fixed w-full z-50 transition-all">
@@ -18,7 +21,7 @@ const Navbar = () => {
             </span>
           </div>
 
-          {/* Masaüstü Menü (Bilgisayarlar için) */}
+          {/* Masaüstü Menü */}
           <div className="hidden md:flex items-center space-x-10 text-sm font-semibold uppercase tracking-widest text-gray-600">
             <a href="#hizmetler" className="hover:text-green-600 transition">Hizmetler</a>
             <a href="#galeri" className="hover:text-green-600 transition">Galeri</a>
@@ -32,9 +35,9 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* Mobil Menü Butonu (Telefonlar için) */}
+          {/* Mobil Menü Butonu */}
           <div className="md:hidden flex items-center">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-600">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-600 focus:outline-none">
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
@@ -44,12 +47,18 @@ const Navbar = () => {
       {/* Telefonlarda Açılan Menü */}
       {isOpen && (
         <div className="md:hidden bg-white border-b border-gray-100 px-4 pt-2 pb-6 space-y-4">
-          <a href="#hizmetler" className="block text-gray-700 font-bold">Hizmetler</a>
-          <a href="#galeri" className="block text-gray-700 font-bold">Galeri</a>
-          <a href="#bolgeler" className="block text-gray-700 font-bold">Bölgeler</a>
-          <button className="w-full bg-green-600 text-white py-3 rounded-xl font-bold">
+          <a href="#hizmetler" onClick={closeMenu} className="block text-gray-700 font-bold py-2">Hizmetler</a>
+          <a href="#galeri" onClick={closeMenu} className="block text-gray-700 font-bold py-2">Galeri</a>
+          <a href="#bolgeler" onClick={closeMenu} className="block text-gray-700 font-bold py-2">Bölgeler</a>
+          
+          {/* Mobil "Hemen Ara" Butonu Düzenlendi */}
+          <a 
+            href="tel:+905435498706"
+            className="flex items-center justify-center w-full bg-green-600 text-white py-3 rounded-xl font-bold shadow-md active:bg-green-700 transition"
+          >
+            <Phone size={20} className="mr-2" />
             HEMEN ARA
-          </button>
+          </a>
         </div>
       )}
     </nav>

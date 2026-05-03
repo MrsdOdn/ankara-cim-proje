@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 items-start">
           {/* 3. Sütun: Sosyal Medya (Renkli ve Modern) */}
-          <div>
+          <div id="sosyal-medya">
             <h5 className="text-green-500 font-bold uppercase tracking-widest text-sm mb-6">📱 SOSYAL MEDYA</h5>
             <div className="flex flex-col space-y-4">
 
