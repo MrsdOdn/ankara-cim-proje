@@ -33,7 +33,7 @@ export const projects = [
     title: "Ot Toplama",
     description: "Biçilen otların temizlenerek bahçeden uzaklaştırılması.",
     type: "video",
-    url: "https://www.youtube.com/shorts/teTcRDGLyBg"
+    url: "https://www.youtube.com/shorts/CWbo_WISB68"
   },
 
   // --- GÖRSEL PROJELERİ ---
